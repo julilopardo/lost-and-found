@@ -1,5 +1,3 @@
-Hello CS50 community! I am Juliana Lopardo from Buenos Aires, Argentina, and this is my final project.
-
 "Lost Pets Finder" it's a website were people who have lost their pet or found an animal that seems to belong to someone else, can reunite pet with owner.
 
 First of all, users must register and log in order to load or obtain any information.
