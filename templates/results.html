@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search results
+{% endblock %}
+
+{% block main %}
+
+<div class="alert alert-primary" role="alert">
+  {{ results }}
+</div>
+
+
+{% for row in lost_table %}
+
+  <div class="card" style="width: 25rem;">
+    <img src= "static/photos/{{ row["pet_id"] }}.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{ row["pet_type"] }} {{ row["pet_name"] }}</h5>
+      <p class="card-text">Color: {{ row["color"] }} <br>Gender: {{ row["gender"] }} <br> Breed: {{ row["breed"] }} <br>
+                Size: {{ row["size"] }} <br> Age: {{ row["age"] }} <br>Special features: {{ row["special"] }} <br>Date: {{ row["date"] }} <br>
+                Country: {{ row["country"] }} <br>State: {{ row["state"] }} <br> City: {{ row["city"] }} <br> Status: {{ row["lost_found"] }} <br> Phone: {{ row["phone"] }} <br>
+                Mail: {{ row["mail"] }} </p>
+
+    </div>
+  </div>
+
+{% endfor %}
+
+{% for row in found_table %}
+
+  <div class="card" style="width: 25rem;">
+    <img src="static/photos/{{ row["pet_id"] }}.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{ row["pet_type"] }}</h5>
+      <p class="card-text">Color: {{ row["color"] }} <br>Gender: {{ row["gender"] }} <br> Breed: {{ row["breed"] }} <br>
+                Size: {{ row["size"] }} <br> Age: {{ row["age"] }} <br>Special features: {{ row["special"] }} <br>Date: {{ row["date"] }} <br>
+                Country: {{ row["country"] }} <br>State: {{ row["state"] }} <br> City: {{ row["city"] }} <br> Status: {{ row["lost_found"] }} <br> Phone: {{ row["phone"] }} <br>
+                Mail: {{ row["mail"] }} </p>
+
+    </div>
+  </div>
+
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,116 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Found
+{% endblock %}
+
+{% block main %}
+<p>Do you think the animal you've found belongs to someone else? Give us all the information you can about the pet and we'll help you find the owner.</p>
+<form action="/found" method="post" enctype="multipart/form-data">
+
+      <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="inputtype">Pet's type</label>
+                <input type="text" class="form-control" name="inputtype" placeholder="Dog, cat, turtle...">
+            </div>
+
+      </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputcolor">Color</label>
+                <input type="text" class="form-control" name="inputcolor" placeholder="Pet's principal color">
+
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputbreed">Breed</label>
+              <input type="text" class="form-control" name="inputbreed" placeholder="Specify only if its commonly known">
+            </div>
+      </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <label for="inputsize">Size</label>
+            <select name="inputsize" class="form-control">
+                    <option selected>Choose...</option>
+                    <option>Small</option>
+                    <option>Medium</option>
+                    <option>Large</option>
+            </select>
+
+        </div>
+        <div class="form-group col-md-4">
+            <label for="inputage">Age</label>
+            <select name="inputage" class="form-control">
+                    <option selected>Choose...</option>
+                    <option>Baby</option>
+                    <option>Young</option>
+                    <option>Adult</option>
+            </select>
+        </div>
+
+        <div class="form-group col-md-4">
+            <label for="inputgender">Gender</label>
+            <select name="inputgender" class="form-control">
+                    <option selected>Choose...</option>
+                    <option>Female</option>
+                    <option>Male</option>
+            </select>
+
+        </div>
+     </div>
+
+    <div>Where did you find it?</div>
+
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <input type="text" class="form-control" name="inputcountry" placeholder="Country">
+
+        </div>
+        <div class="form-group col-md-4">
+            <input type="text" class="form-control" name="inputstate" placeholder="State">
+        </div>
+
+        <div class="form-group col-md-4">
+            <input type="text" class="form-control" name="inputcity" placeholder="City">
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputdate">Date you found it</label>
+            <input type="date" class="form-control" name="inputdate" placeholder="Date last seen">
+
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputimage">Upload a picture of the pet you've found!</label>
+            <input type="file" class="form-control-file" name="inputimage" accept="image/jpg">
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <label for="inputfeatures">Special features and comments</label>
+            <textarea class="form-control" name="inputfeatures" rows="3" placeholder="Does the pet has any special features? Any spot or scars? Did you found it in any special place? Specify here anything you think is particular and useful to find the owner"></textarea>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputmail">Mail</label>
+            <input type="email" class="form-control" name="inputmail" placeholder="Contact email adress">
+
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="inputphone">Phone</label>
+            <input type="text" class="form-control" name="inputphone" placeholder="Contact phone number">
+        </div>
+    </div>
+
+
+  <button type="submit" class="btn btn-primary">Whose pet is this?</button>
+</form>
+
+
+{% endblock %}

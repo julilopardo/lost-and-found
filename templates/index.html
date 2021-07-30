@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+
+<p>Hello! Welcome to Lost Pets Finder. We help people to reunite with their lost best friends &#128054 &#128049.If you've lost your pet or you've found an animal that seems to belong to someone else,
+give us every data about it and we will search on our database, finding matchs and, if the pet or the owner is found, we will give you the data to make contact. Choose one option below to start:</p>
+
+<a class="nav-link active" href="/lost"><div class="button_div">
+    <button type="button" class="btn btn-warning" style="font-size: 3vw; font-family: 'Reem Kufi', sans-serif;">I've lost my pet &#128575</button>
+</div></a>
+
+<a class="nav-link active" href="/found"><div class="button_div">
+<div class="button_div">
+    <button type="button" class="btn btn-info" style="font-size: 3vw; font-family: 'Reem Kufi', sans-serif;" onclick="move_found()">I've found someone's pet &#128568</button>
+</div></a>
+
+{% endblock %}

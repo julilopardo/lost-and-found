@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    My pets
+{% endblock %}
+
+{% block main %}
+
+<div class="alert alert-primary" role="alert">
+  {{ alert }}
+</div>
+
+{% for row in pets_table %}
+
+  <div class="card" style="width: 30rem;">
+    <img src= "static/photos/{{ row["pet_id"] }}.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{ row["type"] }} - Name: {{ row["pet_name"] }}</h5>
+      <p class="card-text" style="font_size: 1vw">Color: {{ row["color"] }} <br>Gender: {{ row["gender"] }} <br> Breed: {{ row["breed"] }} <br>
+                Size: {{ row["size"] }} <br> Age: {{ row["age"] }} <br>Special features: {{ row["special"] }} <br>Date: {{ row["date"] }} <br>
+                Country: {{ row["country"] }} <br>State: {{ row["state"] }} <br> City: {{ row["city"] }} <br> Status: {{ row["lost_found"] }} <br> Pet ID: {{ row["pet_id"] }}</p>
+
+      <form action="{{ url_for('delete') }}" method=post class="btn btn-primary">
+        <input type=hidden value= {{ row["pet_id"] }} name=pet_id />
+        <button type="submit" class="btn btn-primary">Found!</button>
+      </form>
+    </div>
+  </div>
+
+{% endfor %}
+
+{% endblock %}
